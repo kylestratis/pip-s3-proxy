@@ -10,7 +10,7 @@ from wsgiref.simple_server import make_server
 
 def serve_forever(host, port, hook):
     httpd = make_server(host, port, hook)
-    print 'Serving HTTP on port %s...' % port
+    print('Serving HTTP on port %s...' % port)
     httpd.serve_forever()
 
 

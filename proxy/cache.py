@@ -2,9 +2,9 @@
 Filesystem-backed LRU cache.
 """
 
-import ordereddict
+from collections import OrderedDict
 from contextlib import contextmanager
-import cPickle as pickle
+import pickle as pickle
 import logging
 import os
 import tempfile

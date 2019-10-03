@@ -68,7 +68,7 @@ class CachingS3Proxy(object):
         that it's a file system.
 
         """
-        listing = iter(boto3.client('s3').get_paginator('list_objects').paginate(Bucket=bucket, Prefix=key)).next()
+        listing = next(iter(boto3.client('s3').get_paginator('list_objects').paginate(Bucket=bucket, Prefix=key)))
 
         # since we're asking for a listing, it's valid to have 0
         # objects in the results, but we want to pretend that it's a
